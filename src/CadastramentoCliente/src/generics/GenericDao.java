@@ -5,7 +5,7 @@ import Dao.SingletonMap;
 import java.util.HashMap;
 import java.util.Map;
 
-import static java.lang.System.*;
+import static java.lang.System.out;
 
 public abstract class GenericDao<T extends Persistence> implements  IGenericDao<T>{
     private Map<Class<T>,Map<String,T>> map;
@@ -56,8 +56,8 @@ public abstract class GenericDao<T extends Persistence> implements  IGenericDao<
                 if (mapInterno.get(codigo)==null ){
                     out.println("O código solicitado não corresponde a nenhum dado cadastrado do tipo "+getClasse());
                 } else {
-                    out.println("Excluindo...! ");
-                    out.println(mapInterno.remove(codigo));
+                    out.println("Excluindo... ");
+                   mapInterno.remove(codigo);
                 }
             }
         }
